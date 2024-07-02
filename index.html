@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="content">
+            <div class="password-area">
+                <div>
+                <div class="password"></div>
+                <button class="copy">copy</button>
+                </div>
+                
+                <!-- <div class="line"></div> -->
+                <div class="password-lenght">
+                    <h2>password length <span></span></h2>
+                    <input  class="length-input" type="range" step="1" max="30">
+                </div>
+                <div class="settings">
+                    <h2>password settings</h2>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="checkbox" name="" id="lowercase">
+                            <label class="lowercase" for="lowercase">lowercase(a-z)</label>
+                        </li>
+                        <li class="option">
+                            <input type="checkbox" name="" id="numbers">
+                            <label  class="numbers" for="numbers">numbers(0-9)</label>
+                        </li>
+                        <li class="option">
+                            <input type="checkbox" name="" id="uppercase">
+                            <label class="uppercase" for="uppercase">uppercase(A-Z)</label>
+                        </li>
+                        <li class="option">
+                            <input type="checkbox" name="" id="symbols">
+                            <label class="symbols" for="symbols">symbols(^$!*)</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="generat">Generat</button>
+        </div>
+    </div>
+    <script src="mainAI.js"></script>
+</body>
+</html>
