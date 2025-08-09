@@ -1,115 +1,206 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-}
-body{
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffff;
-}
-.container{
-    background: linear-gradient(#ff76d6,#7300ff6f);
-    border-radius: 10px;
-    width: 400px;
-}
-.content{
-    padding: 30px;
-}
-h1{
-    border-bottom: 1px solid black;
-    padding: 20px;
-}
-.line{
-    margin-top: 20px;
-    width: 100%;
-    height: 4px;
-    background: #e2dfdf;
-    border-radius: 50px;
-    position: relative;
+/* لوحة الألوان والخطوط */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  direction: rtl;
 }
 
-.line::before{
-    content: '';
-    position: absolute;
-    width: 50%;
-    background: #ffd900;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 50px 0 0 50px;
+body {
+  background-color: #0b0c10;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c5c6c7;
 }
 
-.password{
-    width: 100%;
-    height: 20px;
-    padding: 10px 5px;
-    border: .5px solid black;
-    margin-top: 10px;
-    border-radius: 4px;
-    position: relative;
-    
+.container {
+  background-color: #1f2833;
+  border-radius: 20px;
+  width: 400px;
+  height: 600px;
+  max-width: 90%;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #45a29e;
 }
-.password-area{
-    position: relative;
-}
-.copy{
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    right: 0;
-    opacity: 0;
-    transition: .5s;
-}
-.password:hover~.copy , .copy:hover{
-    opacity: 1;
-}
-.password-lenght input{
-    width: 100%;
-}
-.password-lenght h2{
-    position: relative;
-}
-.password-lenght h2 span{
-    position: absolute;
-    right: 0;
-}
-h2{
-    padding: 10px 0;
-    font-size: 18px;
-    font-weight: 400;
-}
-.options{
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    flex-wrap: wrap;
-    width: 100%;
 
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #66fcf1;
 }
-.option{
-    width: 50%;
-    margin: 10px 0;
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
-.option input{
-    width: 20px;
-    height: 20px;
-    margin: 0 5px 0 0;
+
+/* حقل كلمة المرور */
+.password-box {
+  position: relative;
 }
-.generat{
-    width: 100%;
-    height: 30px;
-    color: #fff;
-    background-color: black;
-    border: none;
-    cursor: pointer;
+
+.password {
+  width: 100%;
+  height: 60px;
+  padding: 15px 50px 15px 20px;
+  background-color: #0b0c10;
+  border: 1px solid #45a29e;
+  border-radius: 12px;
+  font-size: 22px;
+  color: #66fcf1;
+  pointer-events: none;
+  text-align: right;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
-.generat:active{
-    background-color: #292929;
+
+.copy {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #45a29e;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.copy:hover {
+  color: #66fcf1;
+}
+
+/* مؤشر القوة */
+.password-strength {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.strength-bar {
+  flex-grow: 1;
+  height: 10px;
+  background-color: #2e3b4b;
+  border-radius: 5px;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+.strength-indicator {
+  width: 0;
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.weak {
+  background-color: #f64c71;
+}
+
+.medium {
+  background-color: #f9c74f;
+}
+
+.strong {
+  background-color: #43aa8b;
+}
+
+/* شريط الطول */
+.password-length h2,
+.settings h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #c5c6c7;
+}
+
+.password-length h2 span {
+  color: #66fcf1;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.length-input {
+  width: 100%;
+  height: 10px;
+  -webkit-appearance: none;
+  background-color: #2e3b4b;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.length-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #66fcf1;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #0b0c10;
+  box-shadow: 0 0 5px rgba(102, 252, 241, 0.5);
+}
+
+/* الخيارات */
+.options {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.option:hover {
+  color: #66fcf1;
+}
+
+.option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #66fcf1;
+  cursor: pointer;
+}
+
+.option label {
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* زر التوليد */
+.generate {
+  width: 100%;
+  height: 60px;
+  background-color: #66fcf1;
+  color: #0b0c10;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.generate:hover {
+  background-color: #45a29e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 252, 241, 0.3);
 }
